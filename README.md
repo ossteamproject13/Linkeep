@@ -59,7 +59,7 @@ npm install
 Go to [jsonlink.io](https://jsonlink.io) and get your API key. Then, create a `.env.local` file in the root of the project and add the following.
 
 ```env
-NEXT_PUBLIC_JSONLINK_API_KEY=add_your_api_key_here
+JSONLINK_API_KEY=add_your_api_key_here
 ```
 
 Finally, run the development server.

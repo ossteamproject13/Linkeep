@@ -1,4 +1,3 @@
-import { publicRuntimeConfig } from 'next.config'
 import { toast } from 'react-hot-toast'
 
 export function extractDomainName(url = '') {
@@ -29,12 +28,8 @@ export const fetchUrlMetadata = async (url) => {
 
     let data;
 
-    const jsonlink_api_key = process.env.NEXT_PUBLIC_JSONLINK_API_KEY
-
     try {
-        response = await fetch(
-            publicRuntimeConfig.jsonlink_api_url + `/extract?url=${url}&api_key=${jsonlink_api_key}`
-        )
+        response = await fetch(`/api/analyze?url=${encodeURIComponent(url)}`)
 
         if (!response.ok) {
             toast.error('Oops! Bad URL.')
